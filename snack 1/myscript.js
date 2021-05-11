@@ -12,7 +12,7 @@
 const bicycleList = [
     {
         nome: "MountainBike",
-        peso: 12
+        peso: 14
     },
     {
         nome: "EliasBike",
@@ -27,24 +27,48 @@ const bicycleList = [
         nome: "FloriansBike",
         peso: 17
     },
+    {
+        nome: "BooleansBike",
+        peso: 11
+    },
 ]
 
 
 // Uso un for e il template literal per stampare il peso minore
 
+
+let bikeLeggera = bicycleList[0];
+
+
+
 for (let index = 0; index < bicycleList.length; index++) {
-    const element = bicycleList[index];
-    let pesoMinore = [];
-    if (element.peso < 13) {
-        pesoMinore.push(
-            `${element.peso}`
-        );
-        console.log(pesoMinore)
-        //Destructuring per stampare il peso minore da un array
-        let [pesoMinoreOne] = pesoMinore;
-        console.log(pesoMinoreOne);
+    let element = bicycleList[index];
+     if(bikeLeggera.peso > element.peso){
+        bikeLeggera = element
+       
     }
-};
+    
+}
+    
+   
+    
+
+ 
+//
+console.log( 
+    `
+     La bici con peso minore è la ${bikeLeggera.nome} con peso di ${bikeLeggera.peso} kg
+    `
+    );
+
+
+
+
+
+
+
+
+
 // Ho stampato il peso minore in tutti e due i modi
 
 // // esercizio florian
@@ -74,26 +98,27 @@ for (let index = 0; index < bicycleList.length; index++) {
 
 // // bisogna trovare il peso minore 
 // const findLighterBike = (array) => {
-//     let lighterBike;
+// let lighterBike;
 
 
 
 
 
-//     for (let index = 0; index < array.length; index++) {
-//         const { name, weight } = array[index];
+
+// for (let index = 0; index < array.length; index++) {
+//     const { nome,peso } = array[index];
 
 
 
-//         if (!lighterBike || weight < lighterBike.weight) {
-//             lighterBike = {
-//                 name,
-//                 weight
-//             }
+//     if (!lighterBike || peso < lighterBike.peso) {
+//         lighterBike = {
+//             nome,
+//             peso
 //         }
 //     }
-//     return lighterBike
 // }
+//      return lighterBike
+//     }
 // // eseguire la funzione dopo l'arrow function
-// const foundLighterBike = findLighterBike(bicyclesList);
-// console.log(foundLighterBike);
+//  const foundLighterBike = findLighterBike(bicycleList);
+//  console.log(foundLighterBike);
